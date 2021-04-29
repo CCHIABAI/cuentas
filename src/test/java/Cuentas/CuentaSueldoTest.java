@@ -49,13 +49,13 @@ public class CuentaSueldoTest
     {
         CuentaSueldo instance = new CuentaSueldo();
         Double result = instance.getSaldo();
-        assertEquals( 0.0, (double) result);
+        assertEquals( (double) 0.0, (double) result, 0.0);
         
         instance.depositar(100.0);
-        assertEquals( 100.0, (double) instance.getSaldo());
+        assertEquals( (double)  100.0, (double) instance.getSaldo(), 0.0);
         
         instance.extraer(10.0);
-        assertEquals( 90.0, (double) instance.getSaldo());      
+        assertEquals( (double)  90.0, (double) instance.getSaldo(), 0.0);      
     }
 
 

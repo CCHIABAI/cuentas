@@ -20,8 +20,8 @@ public class CuentaAhorro extends Cuentas.CuentaSueldo
     @Override
     public Boolean extraer(Double monto)
     {        
-        // Sumarle COMISION al monto a extraER
-        if (cantidadExtracciones <= EXTRACCIONES_SIN_COMISION ) 
+        // Sumarle COMISION al monto a extraer
+        if (cantidadExtracciones < EXTRACCIONES_SIN_COMISION ) 
             cantidadExtracciones++;
         else
             monto += 6;            

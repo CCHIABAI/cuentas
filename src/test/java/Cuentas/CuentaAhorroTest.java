@@ -26,7 +26,7 @@ public class CuentaAhorroTest
     public void testExtraer()
     {
 
-        CuentaSueldo instance = new CuentaSueldo();
+        CuentaAhorro instance = new CuentaAhorro();
         Double result = instance.getSaldo();
         
         // Deposito inicial =========================
@@ -34,22 +34,23 @@ public class CuentaAhorroTest
         
         // Sin comision ===========================
         assertTrue(instance.extraer(50.0));
-        assertEquals(950.0, (double) instance.getSaldo());
+        assertEquals(950.0, (double) instance.getSaldo(), 0.0);
         assertTrue(instance.extraer(50.0));
-        assertEquals(900.0, (double) instance.getSaldo());
+        assertEquals(900.0, (double) instance.getSaldo(), 0.0);
         assertTrue(instance.extraer(50.0));
-        assertEquals(850.0, (double) instance.getSaldo());
+        assertEquals(850.0, (double) instance.getSaldo(), 0.0);
         assertTrue(instance.extraer(50.0));
-        assertEquals(800.0, (double) instance.getSaldo());
+        assertEquals(800.0, (double) instance.getSaldo(), 0.0);
 
         assertTrue(instance.extraer(100.0)); // + 6 de comision = 106
-        assertEquals(694.0, (double) instance.getSaldo());
+        assertEquals(694.0, (double) instance.getSaldo(), 0.0);
         
         assertTrue(instance.extraer(50.0)); // + 6 de comision = 56
-        assertEquals(638.0, (double) instance.getSaldo());
+        assertEquals(638.0, (double) instance.getSaldo(), 0.0);
         
         // No deberia ser posible extrear todo el saldo por la comision
         assertFalse(instance.extraer(instance.getSaldo())); // Saldo restante + 6 de comision 
+
         
     }
     
