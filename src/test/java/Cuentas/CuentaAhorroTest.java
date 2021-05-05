@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Cuentas;
 
 import org.junit.Test;
@@ -50,8 +46,7 @@ public class CuentaAhorroTest
         
         // No deberia ser posible extrear todo el saldo por la comision
         assertFalse(instance.extraer(instance.getSaldo())); // Saldo restante + 6 de comision 
-
-        
     }
+
     
 }

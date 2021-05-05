@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package Cuentas;
 
@@ -10,12 +5,38 @@ package Cuentas;
  * Programación Basica 2 - Comision 2900
  * @author Claudio J. CHIABAI <cchiabai@alumno.unlam.edu.ar>
  */
-public class CuentaAhorro extends Cuentas.CuentaSueldo
+public class CuentaAhorro extends Cuentas.Cuenta
 {
-    private final Double COMISION = 6.0;
+    private Double comision = 6.0;
     private final Integer EXTRACCIONES_SIN_COMISION = 4;
     private Integer cantidadExtracciones = 0;
     
+    public CuentaAhorro()
+    {
+    }
+    
+    public CuentaAhorro(Double saldo)
+    {
+        super(saldo);
+    }
+    
+    public CuentaAhorro(Double saldo, Double comision)
+    {
+        super(saldo);
+        setComision(comision);
+    }
+
+    
+    // PROPIEDADES ==================================
+    public Double getComision()
+    {
+        return comision;
+    }
+
+    public void setComision(Double comision)
+    {
+        this.comision = comision;
+    }
 
     @Override
     public Boolean extraer(Double monto)
